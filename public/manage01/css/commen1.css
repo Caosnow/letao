@@ -144,7 +144,13 @@ ul{
 
 
 
-
+/* user用户  */
+.table.table-bordered th,
+.table.table-bordered td{
+    text-align: center;
+    /* 表格的垂直对齐方式 */
+    vertical-align: middle;
+}
 
 
 

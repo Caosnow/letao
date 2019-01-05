@@ -28,7 +28,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="user.html">
+                    <a class="current" href="user.html">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
@@ -63,21 +63,34 @@
         <div class="container-fluid">
             <ol class="breadcrumb mt-20">
                 <li><a href="#">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">用户管理</li>
             </ol>
+          		
+		
+           <table class="table table-bordered table-hover">
+               <thead>
+                   <tr>
+                       <th> 序号</th>
+                       <th>	用户名</th>
+                       <th> 手机号</th>
+                       <th>状态</th>
+                       <th>操作</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>1</td>
+                       <td>itcast</td>
+                       <td>15757771111</td>
+                       <td>正常</td>
+                       <td>
+                           <button class="btn btn-danger">禁用</button>
+                       </td>
+                   </tr>
+               </tbody>
+           </table>
 
-            <!-- Button trigger modal 
-            data-toggle="modal" 切换显示模态框
-            data-target="#myModal" 具体切换哪一个模态框 通过id 关联
-            -->
-            <!-- <button data-toggle="modal" data-target="#myModal">
-                Launch demo modal
-            </button> -->
-
-            <div class="lt_content">
-                <div class="echarts_left pull-left"></div>
-                <div class="echarts_right pull-right"></div>
-            </div>
+           
         </div>
         .
     </div>
@@ -115,10 +128,9 @@
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
     <script src="./js/liLogin.js"></script>
     <script src="./js/common1.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 
 </html>
