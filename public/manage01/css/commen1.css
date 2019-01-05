@@ -1,0 +1,168 @@
+/* 重置样式 */
+.body_bg{
+    background-color: #222D32;
+}
+/* lvha */
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mt_150{
+    margin-top: 150px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.panel-title{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* 左侧侧边栏 */
+.lt-aside{
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color:#222D32;
+    z-index: 999;
+    transition: all 1s;
+}
+.lt-aside.hidemenu{
+    left: -180px;
+}
+.lt-aside .brand a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    background-color: #367FA9;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+}
+
+.lt-aside .user{
+    padding-top: 30px;
+    width: 180px;
+    height: 180px;
+    
+}
+.lt-aside .user img{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.lt-aside .user p{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+.lt-aside .nav li{
+    width: 100%;
+    height: 100%;
+}
+.lt-aside .nav a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    /* background-color: pink; */
+    color: #fff;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+}
+.lt-aside .nav a.current{
+    background-color: #1D1F21;
+    border-left: 3px solid #006699;
+}
+.lt-aside .nav a i{
+    padding-right: 4px;
+}
+.lt-aside .nav .child{
+    display: none;
+}
+.lt-aside .nav .child a{
+    padding-left: 60px;
+}
+.lt-main{
+    height: 2000px;
+    padding-left: 180px;
+    padding-top: 50px;
+    transition: all 1s;
+    background-color: pink;
+}
+.lt-main.hidemenu{
+    padding-left: 0px;
+}
+.lt-main .topbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    padding-left: 180px;
+    transition: all 1s;
+}
+.lt-main .topbar.hidemenu{
+    padding-left: 0px;
+}
+.topbar a{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+   
+}
+
+.lt_content .echarts_left,
+.lt_content .echarts_right{
+    width: 48%;
+    height: 400px;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+/* 模态框  p 字体颜色 */
+.red{
+    color: #A94442;
+}
+/*数据可视化  echarts   highcharts 底层canvas  */
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入bootstarp 框架 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./css/commen1.css">
+
+</head>
+
+<body>
+    <!-- 左边侧边栏   固定定位 -->
+    <div class="lt-aside">
+        <div class="brand">
+            <a href="#">黑马33期牛皮</a>
+        </div>
+        <div class="user">
+            <img src="images/02.jpg" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="category">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span>用户管理</span>
+                    </a>
+                    <!-- 二级导航 -->
+                    <div class="child">
+                        <a href="javascript:;">一级分类</a>
+                        <a href="javascript:;">二级分类</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-tags"></i>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右侧主体部分 -->
+    <div class="lt-main">
+        <div class="topbar">
+            <a href="#" class="pull-left icon_menu"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="#" class="pull-right icon_logout"><i class="glyphicon glyphicon-log-out"></i></a>
+        </div>
+        <!-- 面包屑导航,路径导航,链接导航 -->
+        <div class="container-fluid">
+            <ol class="breadcrumb mt-20">
+                <li><a href="#">管理系统</a></li>
+                <li class="active">首页</li>
+            </ol>
+
+            <!-- Button trigger modal 
+            data-toggle="modal" 切换显示模态框
+            data-target="#myModal" 具体切换哪一个模态框 通过id 关联
+            -->
+            <!-- <button data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+            </button> -->
+
+            <div class="lt_content">
+                <div class="echarts_left pull-left"></div>
+                <div class="echarts_right pull-right"></div>
+            </div>
+        </div>
+        .
+    </div>
+
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="logoutModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!-- 头部 -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <!-- 中间 -->
+                <div class="modal-body">
+                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+                </div>
+                <!-- 下边 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- bootstarp 依赖于jQuery  所以先引入 jquery -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./js/liLogin.js"></script>
+    <script src="./js/common1.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
