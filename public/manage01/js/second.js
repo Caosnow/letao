@@ -48,7 +48,85 @@ $(function(){
 
 
 
+// 2 给添加按钮 注册点击事件
 
+$('#addBtn').click(function(){
+    //展示模态框
+    $('#addModal').modal('show');
+
+    //显示模态框,like发送ajax请求,获取一级分类的所有数据,动态渲染 
+    //通过配置 page:1, pageSize:100 获取所有的一级分类
+    //通过配置 page:1,pageSize:100 获取所有的一级分类
+    $.ajax({
+        url:'/category/queryTopCategoryPaging',
+        type:'get',
+        data:{
+            page:1,
+            pageSize:100
+        },
+        datatype:'json',
+        success:function(info){
+            console.log(info);
+            //利用引擎模板渲染数据
+            var htmlStr = template('addTal',info);
+            $('.dropdown-menu').html(htmlStr);
+        }
+    })
+
+
+
+
+    // 3 校验规则  
+    $('#form').bootstrapValidator({
+        //校验字段
+        fields:{
+            categoryId:{
+                 validators:{
+                    notEmpty:{
+                        message:'二级分类名称不能为空'
+                    }
+                }
+            }
+        }
+    })
+
+
+ // 4 给所有的  a 注册点击事件  让a 的值赋值给 一级分类的文本  
+  //由于是动态渲染  需要事件委托
+    $('.dropdown-menu').on('click','a',function(){
+        //获取自己的文本
+        var txt = $(this).text();
+        //把a 的文本  赋值给  一级分类
+        $('#dropdownText').text(txt);
+    })
+
+
+
+
+
+     // 5 配置  fileupload 文件初始化
+     $('#fileupload').fileupload({
+         datatype:'json',
+         //文件上传完成的回调函数
+         //data：图片上传后的对象，通过data.result.picAddr可以获取上传后的图片地址
+         //data 图片上传后的对象,通过data.resulit.picAddr可以获取上传后的图片地址
+         done:function(e,data){
+            // console.log(data);
+            var url = data.result.picAddr;
+            // console.log(url);
+            $('.img-box img').attr('src',url);
+         }
+     })
+
+
+
+
+
+
+
+
+
+})
 
 
 

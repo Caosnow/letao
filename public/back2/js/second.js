@@ -48,7 +48,7 @@ $(function() {
     $('#addModal').modal("show");
 
     // 显示模态框, 立刻发送请求, 获取所有的一级分类, 渲染下拉菜单
-    // 通过配置 page:1, pageSize:100 获取所有的以及分类
+    // 通过配置 page:1, pageSize:100 获取所有的一级分类
     $.ajax({
       type: "get",
       url: "/category/queryTopCategoryPaging",
