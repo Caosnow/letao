@@ -58,9 +58,9 @@
 //公共的功能
 // 1 左侧二级菜单的切换功能
 $(function(){
-    $('.nav .category').click(function(){
+    $('.lt-aside .category').click(function(){
         //切换下一个兄弟元素,显示隐藏
-        $(this).next().slideToggle();
+        $(this).next().stop().slideToggle();
     })
 
 
