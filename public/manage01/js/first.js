@@ -1,12 +1,14 @@
 
-//已进入页面  动态渲染数据
+//  1   已进入页面  动态渲染数据
 $(function(){
 
     //全局声明一个当前页数
     var currentPage = 1;
     //全局声明   当前页显示的几条数据
     var pageSize = 5;
+    //已进入页面就发送请求,渲染页面
     render();
+
     function render(){
         $.ajax({
             url:'/category/queryTopCategoryPaging',
@@ -17,7 +19,7 @@ $(function(){
             },
             datatype:'json',
             success:function(info){
-                console.log(info);
+                // console.log(info);
                 var htmlstr = template('firstTpl',info);
                 $('tbody').html(htmlstr);
     
@@ -42,5 +44,67 @@ $(function(){
             }
         })
     }
+
+
+
+
+
+    //  2 点击添加按钮 功能
+    $('#addBtn').click(function(){
+
+        //展示模态框
+        $('#addtModal').modal('show');
+    })
+
+
+    // 3 进行校验配置
+    $('#form').bootstrapValidator({
+         // 指定校验时的图标显示，默认是bootstrap风格
+         feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+          },
+
+         // 指定校验字段 一定要有name
+         fields:{
+             //名字
+            categoryName:{
+                //不为空
+                validators:{
+                    notEmpty:{
+                        message:"请输入一级分类名称"
+                    }
+                }
+            }
+         }
+    });
+
+    // 4 当表单校验成功时,会触发success.form.bv  事件
+    $('#form').on('success.form.bv',function(e){
+        //阻止默认跳转
+        e.preventDefault();
+        //发送ajax请求
+        $.ajax({
+            url:'/category/addTopCategory',
+            type:'post',
+            data: $('#form').serialize(),
+            datatype:'json',
+            success:function(info){
+                console.log(info);
+                //关闭模态框
+                $('#addtModal').modal('hide');
+                //重新渲染页面
+                //记住重新渲染第一页
+                currentPage = 1;
+                render();
+            }
+        })
+    })
+
+
+
+
+
 
 })
