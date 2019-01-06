@@ -28,7 +28,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a class="current" href="index.html">
+                    <a href="index.html">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
@@ -39,9 +39,9 @@
                         <span>分类管理</span>
                     </a>
                     <!-- 二级导航 -->
-                    <div class="child">
-                        <a href="first.html">一级分类</a>
-                        <a href="second.html">二级分类</a>
+                    <div class="child" style="display:block;">
+                        <a href="javascript:;">一级分类</a>
+                        <a class="current" href="javascript:;">二级分类</a>
                     </div>
                 </li>
                 <li>
@@ -64,31 +64,35 @@
             <ol class="breadcrumb mt-20">
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">用户管理</li>
+                <li class="active">二级分类</li>
             </ol>
           		
-		
-           <table class="table table-bordered table-hover">
-               <thead>
-                   <tr>
-                       <th> 序号</th>
-                       <th>	用户名</th>
-                       <th> 手机号</th>
-                       <th>状态</th>
-                       <th>操作</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <!-- 挖个坑 -->
-               </tbody>
-           </table>
+            <button class="btn btn-default" id="addBtn">添加分类</button>
 
-           <!-- 分页插件 准备一个 ul  -->
-          <div class="pull-right">
-            <ul id="paginator"></ul>
-          </div>
-        </div>
-      
+
+            <!-- 表格 -->
+             <table class="table table-bordered table-hover mt-20">
+                 <thead>
+                     <tr>
+                         <th> 序号</th>
+                         <th>一级分类名称</th>
+                         <th>二级分类名称</th>
+                         <th>二级分类LOGO</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <!-- 挖了一个坑 -->
+                 </tbody>
+             </table>
+
+
+             <!-- 分页插件的盒子 -->
+             <ul id="paginator"></ul>
     </div>
+
+   
+
+
 
 
     <!-- 退出登录  模态框 -->
@@ -113,50 +117,18 @@
         </div>
     </div>
 
-
-    <!-- 启用模态框 -->
-    <div class="modal fade" id="usertModal" tabindex="-1">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <!-- 头部 -->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title" >温馨提示</h4>
-                </div>
-                <!-- 中间 -->
-                <div class="modal-body">
-                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
-                </div>
-                <!-- 下边 -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary submitBtn">确认</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 创建模板 -->
-    <script type="text/html" id="usertpl">
-        {{each rows v i }}
-            <tr>
-                <td>{{i + 1 + (page-1)*size}}</td>
-                <td>{{v.username}}</td>
-                <td>{{v.mobile}}</td>
-                <!-- isDelete 标记用户的状态 -->
-                <td>{{v.isDelete === 1 ? "正常" : "已禁用"}}</td>
-                <td data-id="{{v.id}}">
-                    {{if v.isDelete === 1}}
-                    <button class="btn btn-danger">禁用</button>
-                    {{else}}
-                    <button class="btn btn-success">启用</button>
-                    {{/if}}
-                </td>
+    <!-- 准备模板 -->
+    <script type="text/html" id="secondTpl">
+        {{each rows v i}}
+             <tr>
+                <td>{{i + 1+(page-1)*size}}</td>
+                <td>{{v.categoryName}}</td>
+                <td>{{v.brandName}}</td>
+                <td><img style="height:50px;" src="{{v.brandLogo}}" alt=""></td>
             </tr>
-        {{/each}}    
+        {{/each}}
     
     </script>
-
 
     <!-- bootstarp 依赖于jQuery  所以先引入 jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
@@ -167,7 +139,8 @@
     <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./js/liLogin.js"></script>
     <script src="./js/common1.js"></script>
-    <script src="./js/user.js"></script>
+    <script src="./js/second.js"></script>
+
 </body>
 
 </html>
