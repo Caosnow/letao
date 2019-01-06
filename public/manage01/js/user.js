@@ -24,7 +24,7 @@ $(function(){
             },
             datatype:'json',
             success:function(info){
-                console.log(info);
+                // console.log(info);
                 var htmlStr = template('usertpl',info);
                 $('tbody').html( htmlStr);
     
@@ -90,7 +90,7 @@ $(function(){
             $('#usertModal').modal('show');
              //获取当前用户的id 
              currentId = $(this).parent().data("id");
-             console.log(currentId);
+            //  console.log(currentId);
              //当前需要修改用户的状态   // 获取将用户修改成什么状态  // 禁用按钮 ? 禁用状态 0 : 启用状态 1
             //如果是禁用,按钮是启用状态 1 ,如果是正常,按钮是禁用状态0
              isDelete = $(this).hasClass('btn-danger')? 0: 1;
@@ -110,7 +110,7 @@ $(function(){
                 },
                 datatype:'json',
                 success:function(info){
-                    console.log(info);
+                    // console.log(info);
                     if(info.success){
                         //关闭模态框  ,就是隐藏模态框
                         $('#usertModal').modal('hide');
