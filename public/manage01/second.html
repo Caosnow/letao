@@ -115,10 +115,12 @@
                                        <!-- 挖了一个坑 -->
                                     </ul>
                                 </div>
+                                <!-- 准备一个专门用于提交的隐藏域 -->
+                                <input type="hidden" name="categoryId">
                             </div>
                             <div class="form-group mt-20">
 
-                                <input type="text" name="categoryId" class="form-control" placeholder="请输入二级分类">
+                                <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
                             </div>
                             <div class="form-group">
                                 <label for="fileupload" class="btn btn-default">上传图片</label>
@@ -128,6 +130,8 @@
                             </div>
                             <div class="form-group img-box">
                                 <img style="width:100px;" src="./images/none.png" alt="">
+                                <!-- 准备一个隐藏域专门用于提交 -->
+                                <input type="hidden" name="brandLogo">
                             </div>
                         </div>
                         <!-- 下边 -->
@@ -176,11 +180,17 @@
             </tr>
         {{/each}}
 
-        <!-- 准备模板   模态框模板-->
+        
+        </script>
+
+          <!-- 准备模板   模态框模板-->
         <script type="text/html" id="addTal">
+
         {{each rows v i}}
-            <li><a href="#">{{v.categoryName}}</a></li>
+            <li><a data-id="{{v.id}}" href="#">{{v.categoryName}}</a></li>
         {{/each}}
+        
+        
         </script>
     
     </script>
